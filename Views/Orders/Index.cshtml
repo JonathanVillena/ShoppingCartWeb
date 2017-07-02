@@ -1,0 +1,35 @@
+@model IEnumerable<ShoppingCartWeb.Models.Order>
+@{
+    ViewBag.Title = "Mis Compras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h3>Mis Compras</h3>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>N° de orden</td>
+            <td>Fecha de pedido</td>
+            <td>Ciudad</td>
+            <td>Pais</td>
+            <td>Total</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+         @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+                <td>@item.City</td>
+                <td>@item.Country</td>
+                <td>@item.Total</td>
+                <td><a href="@Url.Action("Details","Orders",new {id= @item.OrderId})">ver Detalles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

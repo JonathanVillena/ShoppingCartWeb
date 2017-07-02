@@ -1,0 +1,90 @@
+@model ShoppingCartWeb.Models.Order
+
+@{
+    ViewBag.Title = "Address And Payment";
+}
+
+<form asp-controller="Checkout" asp-action="AddressAndPayment" method="post">
+    <div class="row">
+        <h2>Address And Payment</h2>
+        <hr/>
+    </div>
+    <fieldset>
+        <legend>Shipping Information</legend>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.FirstName)
+            <div class="">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.LastName)
+            <div class="">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.Address)
+            <div class="">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.City)
+            <div class="">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.State)
+            <div class="">
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.PostalCode)
+            <div class="">
+                @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostalCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.Country)
+            <div class="">
+                @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.Phone)
+            <div class="">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-10 form-group">
+            @Html.LabelFor(model => model.Email)
+            <div class="">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </fieldset>
+    <br />
+    <button  type="submit" class="btn btn-primary">Submit Order</button>
+</form>

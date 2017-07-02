@@ -1,0 +1,22 @@
+@model ShoppingCartWeb.Models.Album
+@{
+    ViewBag.Title = "Mostrar detalle";
+}
+
+
+<div class="container row">
+    <h2>Detalle de Album</h2>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="image">
+        <img src="@Model.AlbumArtUrl" class="img-responsive" alt="Image"> 
+        </div>
+        <div class="descripcion">
+            <p> <span class="titulodescripcion">@Model.Title</span><img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/shopping-cart-128.png" width="32px" alt="add to shopping cart" />
+                @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCarts", new { id = @Model.AlbumId }, "")</p>
+            <p><strong>Precio: </strong>@Model.Price soles</p>
+            <p class="contenido">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat optio ratione sed vel beatae, alias, officiis odit laboriosam rem. Aliquid quibusdam deleniti dignissimos, odit atque facere libero nesciunt, dolorum natus.
+            </p>
+        </div>
+    </div>
+</div>

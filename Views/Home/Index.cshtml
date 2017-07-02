@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShoppingCartWeb.Models.Album>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .titulodescripcion {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<br/>
+<div class="row text-center">
+    <h2>Albumes</h2>
+    <hr/>
+</div>
+<div class="container row">
+    
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="image">
+                <a href='@Url.Action("MostrarDetalle","Album",new {id= @item.AlbumId})'> <img src="@item.AlbumArtUrl" class="img-responsive" alt="Image"> <a>
+            </div>
+            <div class="descripcion">
+                 <p> <span class="titulodescripcion">@item.Title</span><img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/shopping-cart-128.png" width="32px" alt="add to shopping cart" />
+                     @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCarts", new { id = @item.AlbumId }, "")</p>
+                 <p><strong>Precio: </strong>@item.Price soles</p>
+                <p class="contenido">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat optio ratione sed vel beatae, alias, officiis odit laboriosam rem. Aliquid quibusdam deleniti dignissimos, odit atque facere libero nesciunt, dolorum natus.
+                </p>
+
+            </div>
+
+        </div>
+
+    }
+
+</div>
